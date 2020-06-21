@@ -11,7 +11,7 @@ O protótipo foi feito com materiais de fácil acesso como partes da caixa de pa
 * Motor de engrenagem
 * Bateria 8V
 * Módulo de ethernet ENC28J60
-* Caixa de papel recortada em retângulo 60cm de altura e 30cm de largura
+* Caixa de papelão recortada em retângulo 60cm de altura e 30cm de largura
 * Palito para segurar a porta que fica no cano
 * A porta foi feita de papelão, cortada em formato circular, um pouco menor que a largura do cano para que seja possível girar
 
