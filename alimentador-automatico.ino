@@ -23,9 +23,8 @@ const int PIR = 8;
 unsigned long previousMillis = 0;
 static const long intervalo = 0;
 
+// handle message arrived
 void callback(char* topic, byte* payload, unsigned int length) {
-  // handle message arrived
-
   Serial.print("Callback: ");
   Serial.println(topic);
   payload[length]='\0';
@@ -52,6 +51,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
 EthernetClient ethClient;
 PubSubClient client(server, port, callback, ethClient);
 
+// reconnect in mqtt
 boolean reconnect() {
   Serial.println("Tentando conectar...");
   if (client.connect("arduino", user, pass)) {
