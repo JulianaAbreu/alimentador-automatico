@@ -1,6 +1,9 @@
 # alimentador-automatico
 Projeto para automatizar a alimentação do Pet como trabalho da disciplina de Objetos Inteligentes Conectados
 
+## Protótipo
+A fim de automatizar um processo do dia a dia das pessoas que possuem Pet em casa, pensamos num mecanismo para Alimentação automática, onde pode-se liberar a comida do Pet pelo aplicativo MQTT Dash ou ao detectar a presença do Pet perto do mecanismo. A quantidade de ração desce aos poucos para que não haja desperdício, utilizamos também metade da garrafa pet para funilar a descida através do cano.
+
 ## Mecanismo
 O protótipo foi feito com materiais de fácil acesso como partes da caixa de papelão e um cano, também utilizamos os seguintes componentes eletrônicos: 
 * Arduino UNO
