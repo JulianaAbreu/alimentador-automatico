@@ -10,8 +10,8 @@ IPAddress ip(192, 169, 100, 100);
 // MQTT
 long lastReconnectAttempt = 0;
 const char *server = "m11.cloudmqtt.com";
-const char *user = "abrqvnly";
-const char *pass = "ZuANsMoajxqT";
+const char *user = "*****";
+const char *pass = "**********";
 const int port = 19604;
 const char* mqttTopicSub ="motorcomando";
 
@@ -21,7 +21,7 @@ const int PIR = 8;
 
 // Intervalo
 unsigned long previousMillis = 0;
-const long intervalo = 7200000;
+static const long intervalo = 0;
 
 void callback(char* topic, byte* payload, unsigned int length) {
   // handle message arrived
@@ -41,6 +41,8 @@ void callback(char* topic, byte* payload, unsigned int length) {
     Serial.println("Liga motor");
     motor.setSpeed(255);
     motor.run(FORWARD);
+    delay(2000);
+    motor.setSpeed(0);
   } else if(msg == "0") {
     Serial.println("Desliga motor");
     motor.setSpeed(0);
@@ -95,11 +97,15 @@ void loop() {
  unsigned long currentMillis = millis();
 
   if(leitura == HIGH) {
-    detectPresence("presence", leitura);
-    Serial.println("Pet Detectado");
-    openMotor("motorcomando", "1");
+    // after detecting presence, 2 hour interval
+    if(currentMillis - previousMillis >= intervalo) {
+        previousMillis = currentMillis;
+        detectPresence("presence", leitura);
+        Serial.println("Pet Detectado");
+        openMotor("motorcomando", "1");
+      }
   }
- 
+
  Serial.flush();
   if (!client.connected()) {
     Serial.println("Desconectado");
@@ -118,6 +124,7 @@ void loop() {
   
 }
 
+// detect presence and subscribe to MQTT
 void detectPresence(char* topic, int detected) {
   if(client.connected()){
     if(detected) {
@@ -129,12 +136,13 @@ void detectPresence(char* topic, int detected) {
   }
 }
 
+// open motor and subscribe to MQTT
 void openMotor(char* topic, int estado) {
   if(client.connected()){
     if(estado == "1") {
        if(client.publish(topic, estado)) {
           Serial.println("Enviado");
-          motor.setSpeed(255);
+          motor.setSpeed(2000);
           delay(500);
           motor.setSpeed(0);
         } 
