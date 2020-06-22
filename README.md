@@ -9,7 +9,7 @@ O protótipo foi feito com materiais de fácil acesso como partes da caixa de pa
 * Arduino UNO
 * Sensor PIR (presença e movimento)
 * Motor de engrenagem
-* Bateria 8V
+* Bateria 6V
 * Módulo de ethernet ENC28J60
 * Caixa de papelão recortada em retângulo 60cm de altura e 30cm de largura
 * Palito para segurar a porta que fica no cano
@@ -26,4 +26,4 @@ Para reproduzir este protótipo, deve-se seguir o circuito abaixo com os respect
 
 Circuito do motor de engrenagem, que fica a encaixado no Arduíno:
 
-![motor-circuito](https://user-images.githubusercontent.com/14910223/85233521-6ad96d80-b3dd-11ea-88f9-c8bc3ea3d51e.png)
+![85233521-6ad96d80-b3dd-11ea-88f9-c8bc3ea3d51e](https://user-images.githubusercontent.com/14910223/85241101-059f6f80-b411-11ea-9ce4-1d2ceb3774ec.png)
