@@ -1,4 +1,4 @@
-# Auto Ração: Alimentação automática
+# Auto-Ração: Alimentação automática
 Projeto para automatizar a alimentação do Pet como trabalho da disciplina de Objetos Inteligentes Conectados
 
 ## Protótipo
